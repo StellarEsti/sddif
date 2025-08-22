@@ -147,7 +147,7 @@ export default defineComponent({
         </em></p>
         <h2>Analysis of Doppler-Consistency</h2>
         <div style="text-align: center;">
-        <img src="doppler.png" alt="Doppler"  width="600">
+        <img src="./doppler.png" alt="Doppler"  width="600">
         </div>
         As the above Fig. shows, the Doppler-Consistency bridges Spatial and Doppler features of the radar. As described in the main text, Doppler velocity, i.e. relative radial velocity <VueLatex expression="
         v_{i,j}^{r}"/>, is typically determined by the radar's ego-velocity <VueLatex expression="\bm{v}^{ego}"/> and the target's azimuth <VueLatex expression="a_i"/> and elevation angle <VueLatex expression="e_j"/>
