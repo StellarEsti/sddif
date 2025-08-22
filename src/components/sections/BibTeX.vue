@@ -3,11 +3,11 @@ export default {
   data() {
     return {
       bibtex: [
-        "@article{junyaohu2023template,",
-        "    title={Academic Project Page Template Vue},",
-        "    author={Hu, Junyao},",
-        "    journal={GitHub},",
-        "    year={2023}",
+        "@article{wang2025sddiff,",
+        "    title={SDDiff: Boost Radar Perception via Spatial-Doppler Diffusion},",
+        "    author={Shengpeng Wang, Xin Luo, Yulong Xie and Wei Wang},",
+        "    journal={arXiv preprint arXiv:2506.16936},",
+        "    year={2025}",
         "}",
       ],
     }

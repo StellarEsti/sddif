@@ -11,14 +11,14 @@ export default {
       comparison1Loading: true,
       comparison2Loading: true,
       options: [
-        'bottle',
-        'box',
-        'clip',
-        'cup',
-        'duck',
-        'flim',
-        'glass',
-        'toy'
+        'Aspen',
+        'Lab',
+        'Indoors',
+        'Outdoors',
+        'Hallways',
+        // 'flim',
+        // 'glass',
+        // 'toy'
       ],
     }
   },
@@ -37,13 +37,14 @@ export default {
 
     loadImage1(value) {
       this.comparison1Loading = true;
-      const imagePath = `${this.comparisonImageRootPath}${value}.png`;
+      const imagePath = `${this.comparisonImageRootPath}${value}_pred.png`;
       // 创建一个新的Image对象用于预加载
       const image = new Image();
       image.src = imagePath;
       // 监听图片加载完成事件
       image.onload = () => {
           this.comparison1ImageRootPath = imagePath;
+          this.seqName = value;
           // 图片加载完成后，更新当前图片路径
           this.comparison1Loading = false;
       };
@@ -51,13 +52,14 @@ export default {
 
     loadImage2(value) {
       this.comparison2Loading = true;
-      const imagePath = `${this.comparisonImageRootPath}${value}.png`;
+      const imagePath = `${this.comparisonImageRootPath}${value}_gt.png`;
       // 创建一个新的Image对象用于预加载
       const image = new Image();
       image.src = imagePath;
       // 监听图片加载完成事件
       image.onload = () => {
           this.comparison2ImageRootPath = imagePath;
+          this.seqName = value;
           // 图片加载完成后，更新当前图片路径
           this.comparison2Loading = false;
       };
@@ -71,7 +73,7 @@ export default {
     <el-divider />
 
     <el-row justify="center">
-      <h1 class="section-title">Comparison</h1>
+      <h1 class="section-title">PCE Results</h1>
     </el-row>
 
     <el-row justify="center">
@@ -95,7 +97,7 @@ export default {
                     <el-image :src="comparison1ImageRootPath" style="width: 100%; height: 100%" fit="scale-down"/>
                   </template>
                 </el-skeleton>
-                <span class="demonstration">input: {{ comparison1ImageRootPath }}</span>
+                <span class="demonstration">pred: {{ seqName }}</span>
               </div>
             </div>
 
@@ -134,7 +136,7 @@ export default {
                     <el-image :src="comparison2ImageRootPath" style="width: 100%; height: 100%" fit="scale-down"/>
                   </template>
                 </el-skeleton>
-                <span class="demonstration">input: {{ comparison2ImageRootPath }}</span>
+                <span class="demonstration">gt: {{ seqName }}</span>
               </div>
             </div>
 

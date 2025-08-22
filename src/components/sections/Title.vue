@@ -4,10 +4,10 @@ import { ElIcon } from 'element-plus'
 import { Document, Files, MagicStick, Picture, DataAnalysis, Film } from '@element-plus/icons-vue'
 
 // logo地址，没有则置为""即可
-const logo = './logo.png'
+const logo = './ijcai_logo.png'
 
 // 标题
-const title = 'Academic Project Page Template'
+const title = 'SDDiff: Boost Radar Perception via Spatial-Doppler Diffusion'
 
 // 标题颜色
 const title_color = '#000000'
@@ -24,22 +24,28 @@ const btn_color = '#444444'
 // 作者清单（包含作者姓名、头像、主页、地址序号）
 const authors = [
   {
-    name: "Your Name",
-    icon: "./icon/junyaohu.jpg",
-    homepage: "https://junyaohu.github.io/",
-    address_flag: "1,#"
+    name: "Shengpeng Wang",
+    icon: "./icon/wsp.png",
+    homepage: "https://shengpeng.wang/",
+    address_flag: "1"
   },
   {
-    name: "Anya Forger",
+    name: "Xin Luo",
     icon: "./icon/anya.jpg",
-    homepage: "https://www.bilibili.com/video/BV1jv4y1P7Bb",
-    address_flag: "2,#"
+    homepage: "https://metaiot.group/members/PhD2025_XinLuo.html",
+    address_flag: "1"
   },
   {
-    name: "BugCat Capoo",
+    name: "Yulong Xie",
+    icon: "./icon/anya.jpg",
+    homepage: "https://metaiot.group/team/",
+    address_flag: "1"
+  },
+  {
+    name: "Wei Wang",
     icon: "./icon/capoo.webp",
-    homepage: "https://zh.moegirl.org.cn/%E7%8C%AB%E7%8C%AB%E8%99%AB%E5%92%96%E6%B3%A2",
-    address_flag: "1,*"
+    homepage: "https://metaiot.group/weiwang.html",
+    address_flag: "2,*"
   },
 ]
 
@@ -47,21 +53,21 @@ const authors = [
 const addresses = [
   {
     address_flag: "1",
-    name: "Home University",
-    icon: "./icon/home.png",
-    homepage: "https://github.com/hmuniversity"
+    name: "Huazhong University of Science and Technology",
+    icon: "./icon/hust.png",
+    homepage: "https://www.hust.edu.cn/"
   },
   {
     address_flag: "2",
-    name: "IKUN University",
-    icon: "./icon/ikun.avif",
-    homepage: "https://www.bilibili.com/video/BV178411Y7QB"
+    name: "Wuhan University",
+    icon: "./icon/whu.png",
+    homepage: "https://www.whu.edu.cn/"
   },
 ]
 
 // 共一和通讯提示
 const con_and_corresponding_author = 
-  "#: Equal Contribution. *: Corresponding Author."
+  "*: Corresponding Author."
 
 // 最新消息
 const news = "🔥 [2024-12-15] This template project is still under development."
@@ -77,21 +83,22 @@ const emphases = [
 // 提供引导资料链接
 const buttons = [
   {
-    disabled: true,
-    name: "Paper",
-    component: Document,
-  },
-  {
-    disabled: true,
-    name: "中译版",
-    component: Document,
-  },
-  {
     disabled: false,
-    name: "Code",
-    link: "https://github.com/JunyaoHu/academic-project-page-template-vue",
-    component: Files,
+    name: "Paper",
+    link: "https://arxiv.org/abs/2506.16936",
+    component: Document,
   },
+  // {
+  //   disabled: true,
+  //   name: "中译版",
+  //   component: Document,
+  // },
+  // {
+  //   disabled: false,
+  //   name: "Code",
+  //   link: "https://github.com/JunyaoHu/academic-project-page-template-vue",
+  //   component: Files,
+  // },
   {
     disabled: false,
     name: "Demo",
@@ -99,7 +106,7 @@ const buttons = [
     component: MagicStick,
   },
   {
-    disabled: true,
+    disabled: false,
     name: "Poster",
     component: Picture,
   },
@@ -110,16 +117,16 @@ const buttons = [
   },
   {
     disabled: false,
-    name: "Video (减论)",
+    name: "Supplementary",
     link: "https://www.bilibili.com/video/BV15XkgYiE73/",
     component: Film,
   },
-  {
-    disabled: false,
-    name: "Video (Tutorial)",
-    link: "https://www.bilibili.com/video/BV1oUrfYzEqZ",
-    component: Film,
-  },
+  // {
+  //   disabled: false,
+  //   name: "Video (Tutorial)",
+  //   link: "https://www.bilibili.com/video/BV1oUrfYzEqZ",
+  //   component: Film,
+  // },
 ]
 
 </script>
@@ -130,7 +137,7 @@ const buttons = [
     <!-- 最新消息提示 -->
     <el-row justify="center">
       <el-col :span="24">
-        <el-alert title="🔥 This template is still under development." type="success" />
+        <el-alert title="🔥 This project homepage is still under update." type="success" />
       </el-col>
     </el-row>
 
@@ -144,7 +151,7 @@ const buttons = [
       <el-col :span="20">
         <h1 class="paper-title">
           <span v-if="title" :style="{color:title_color}"> {{ title }}</span>
-          <span v-if="title_supp" :style="{color:title_supp_color}"> {{ title_supp }}</span>
+          <!-- <span v-if="title_supp" :style="{color:title_supp_color}"> {{ title_supp }}</span> -->
         </h1>
       </el-col>
     </el-row>
@@ -179,9 +186,9 @@ const buttons = [
     </el-row>
 
     <!-- 强调内容 -->
-    <el-row justify="center" class="emphasis" v-for="emphasis in emphases">
+    <!-- <el-row justify="center" class="emphasis" v-for="emphasis in emphases">
         {{ emphasis }}
-    </el-row>
+    </el-row> -->
 
     <!-- 提供引导按钮 -->
     <el-row justify="center" style="margin-bottom: 20px;">
@@ -231,7 +238,7 @@ const buttons = [
 
 /* 姓名属性 */
 .author {
-  font-size: 18px;
+  font-size: 24px;
   margin-left: 3px;
 }
 
@@ -243,7 +250,7 @@ const buttons = [
 
 /* 地址属性 */
 .address {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 /* 地址上标属性 */
@@ -261,7 +268,7 @@ const buttons = [
 /* 共一和通讯文字属性 */
 .con-cor {
   font-family: Arial;
-  font-size: 14px;
+  font-size: 20px;
   margin: 18px 0px;
   text-align: center;
 }
@@ -277,7 +284,7 @@ const buttons = [
 
 /* 引导材料按钮文字属性 */
 .btn-text {
-  font-size: 18px;
+  font-size: 28px;
   color: #ffffff;
 }
 
@@ -289,10 +296,13 @@ const buttons = [
   margin: 0;
 }
 
+/* logo格式 */
 .logo {
-  width: 150px; 
-  height: 150px;
-  border-radius: 50%;
+  width: auto; 
+  height: auto;
+  /* border-radius: 50%; */
+  max-width: 400px; /* 可选：限制最大宽度（避免图片过宽撑破页面） */
+  max-height: 200px;/* 可选：限制最大高度（根据需求调整） */
   box-shadow: #ced3dc 0px 0px 3px 2px;
   margin-top: 40px;
 }

@@ -13,13 +13,9 @@ import { vue3dLoader } from "vue-3d-loader";
 
     <el-row justify="center">
       <el-col :xs="24" :sm="20" :md="16" :lg="12" :xl="12">
-        <p>
-        Thanks to
-        <a href="https://github.com/king2088/vue-3d-loader" target="_blank">vue-3d-loader</a>,
-        we can visualize these 3D models here. It supports dae, fbx, gltf(glb), obj, ply, stl models.
-        </p>
+
         <el-row justify="space-evenly">
-          <el-col :xs="16" :sm="10" >
+          <!-- <el-col :xs="16" :sm="10" >
             <div class="threed-container">
               <vue3dLoader
               filePath="./model3d/obj/male02.obj"
@@ -34,7 +30,7 @@ import { vue3dLoader } from "vue-3d-loader";
               :backgroundColor="'#f2f2f2'"
             />
             </div>
-          </el-col>
+          </el-col> -->
           <el-col :xs="16" :sm="10" >
             <vue3dLoader
               filePath="./model3d/ply/Lucy100k.ply"

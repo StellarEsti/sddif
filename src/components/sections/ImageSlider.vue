@@ -1,17 +1,19 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 
-const NUM_INTERP_FRAMES = 10;
+const NUM_INTERP_FRAMES = 21;
 const inputImagePaths = [];
 const outputImagePaths = [];
-const inputImageRootPath = './image_slider/huaqiang/input/';
-const outputImageRootPath = './image_slider/huaqiang/output/';
+const inputImageRootPath = './image_slider/huaqiang/forward/';
+const outputImageRootPath = './image_slider/huaqiang/reverse/';  
 const minValue = 0;
-const maxValue = 9;
+const maxValue = 20;
 let inputImagePath = ref("");
 let outputImagePath = ref("");
 let sliderValue = ref(0);
 let isLoading = ref(true);
+let currentFrame = ref(0);
+
 
 const preloadInterpolationImages = () => {
   const promises = [];
@@ -26,7 +28,7 @@ const preloadInterpolationImages = () => {
     inputImg.src = inputPath;
     promises.push(inputPromise);
 
-    var outputPath = outputImageRootPath + String(i) + '.png';
+    var outputPath = outputImageRootPath + String(maxValue-i) + '.png';
     const outputImg = new Image();
     outputImagePaths[i] = outputImg;
     const outputPromise = new Promise((resolve) => {
@@ -49,6 +51,7 @@ onMounted(() => {
 
 const handleChange = (value) => {
   // 当滑块的值改变时，加载对应的图片
+  currentFrame.value = value;
   inputImagePath.value = inputImagePaths[value].src;
   outputImagePath.value = outputImagePaths[value].src;
 };
@@ -60,7 +63,7 @@ const handleChange = (value) => {
     <el-divider />
 
     <el-row justify="center">
-      <h1 class="section-title">Qualitative Results</h1>
+      <h1 class="section-title">Spatial Doppler Domain Representation Diffusion</h1>
     </el-row>
 
     <el-row justify="center">
@@ -85,7 +88,7 @@ const handleChange = (value) => {
                   </template>
                 </el-skeleton>
                 <!-- 图片路径 -->
-                <span class="demonstration">input: {{ inputImagePath }}</span>
+                <span class="demonstration">forward timestamp: {{ currentFrame }}</span>
               </div>
             </div>
           </el-col>
@@ -109,7 +112,7 @@ const handleChange = (value) => {
                   </template>
                 </el-skeleton>
                 <!-- 图片路径 -->
-                <span class="demonstration">output: {{ outputImagePath }}</span>
+                <span class="demonstration">reverse timestamp: {{ currentFrame }}</span>
               </div>
             </div>
           </el-col>
