@@ -14,7 +14,7 @@ export default defineComponent({
     <el-divider />
 
     <el-row justify="center">
-      <h1 class="section-title">Supplementary</h1>
+      <h1 class="section-title" id="Supplementary">Supplementary</h1>
     </el-row>
 
     <el-row justify="center">
@@ -170,10 +170,28 @@ export default defineComponent({
         Equality 35 holds if and only if object's spatial direction vector <VueLatex expression="\left[ \cos a_i\cos e_j,\sin a_i\cos e_j,\sin e_j \right]"/> is collinear with the radar's ego velocity vector <VueLatex expression="\boldsymbol{v}^{ego}"/>. As shown in Fig. 1, this means the peak height of the distribution surface of <VueLatex expression="v^{r}"/> w.r.t. <VueLatex expression="a_i"/> and <VueLatex expression="e_j"/> corresponds to the magnitude of the radar's velocity, while the peak position indicates the azimuth and elevation angles of the radar's motion.
 
           </em></p>
+
+        
         
         </p>
       </el-col>
     </el-row>
+  </div>
+
+
+  <div>
+  <el-divider />
+  <el-row justify="center">
+      <h1 class="section-title" id="ResultTable">Results</h1>
+      
+    </el-row>
+  <div style="text-align: center;">
+        <img src="/pce_result.png" alt="pce_result"  width="1200">
+        <img src="/eve_result.png" alt="pce_result"  width="800"><br>
+
+        <img src="/reliability.png" alt="pce_result"  width="800">
+
+        </div>
   </div>
 </template>
 

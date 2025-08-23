@@ -25,25 +25,25 @@ const btn_color = '#444444'
 const authors = [
   {
     name: "Shengpeng Wang",
-    icon: "./icon/wsp.png",
+    icon: "./icon/wsp.jpg",
     homepage: "https://shengpeng.wang/",
     address_flag: "1"
   },
   {
     name: "Xin Luo",
-    icon: "./icon/anya.jpg",
+    icon: "./icon/lx.jpg",
     homepage: "https://metaiot.group/members/PhD2025_XinLuo.html",
     address_flag: "1"
   },
   {
     name: "Yulong Xie",
-    icon: "./icon/anya.jpg",
+    icon: "./icon/xyl.jpg",
     homepage: "https://metaiot.group/team/",
     address_flag: "1"
   },
   {
     name: "Wei Wang",
-    icon: "./icon/capoo.webp",
+    icon: "./icon/ww.png",
     homepage: "https://metaiot.group/weiwang.html",
     address_flag: "2,*"
   },
@@ -85,7 +85,7 @@ const buttons = [
   {
     disabled: false,
     name: "Paper",
-    link: "https://arxiv.org/abs/2506.16936",
+    link: "https://arxiv.org/pdf/2506.16936",
     component: Document,
   },
   // {
@@ -102,7 +102,7 @@ const buttons = [
   {
     disabled: false,
     name: "Demo",
-    link: "https://junyaohu.github.io/academic-project-page-template-vue",
+    link: "#exVideo",
     component: MagicStick,
   },
   {
@@ -118,7 +118,7 @@ const buttons = [
   {
     disabled: false,
     name: "Supplementary",
-    link: "https://www.bilibili.com/video/BV15XkgYiE73/",
+    link: "#Supplementary",
     component: Film,
   },
   // {
