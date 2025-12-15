@@ -108,6 +108,7 @@ const buttons = [
   {
     disabled: false,
     name: "Poster",
+    link: "https://github.com/wsp666/IJCAI2025_Poster",
     component: Picture,
   },
   {

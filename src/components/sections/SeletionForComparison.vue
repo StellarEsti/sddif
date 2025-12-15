@@ -25,7 +25,7 @@ export default {
   beforeMount() {
     // 在组件挂载之前预加载第一张图片
     this.handleChange1(this.options[0]);
-    this.handleChange2(this.options[1]);
+    this.handleChange2(this.options[0]);
   },
   methods: {
     handleChange1(value) {
